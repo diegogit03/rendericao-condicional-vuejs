@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>Produto</h1>
+        <ul v-for="valor in produto">
+            <li>{{ valor }}</li>
+        </ul>
+        <li>----</li>
+        <ul v-for="(valor, chave) in produto">
+           <li>{{ chave }}: {{ valor }}</li>
+        </ul>
+        <li>----</li>
+        <ul v-for="(valor, chave, indice) in produto">
+           <li>{{ chave }}: {{ valor }} - {{ indice }}</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+
+        new Vue({
+            el: '#app',
+            data: {
+                produto: {
+                    id: 1,
+                    Nome: 'Teclado',
+                    Marca: 'Dell',
+                    Valor: 100
+                }
+            }
+        });
+    
+    </script>
+
+</body>
+</html>
