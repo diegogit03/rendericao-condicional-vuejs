@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <p>Produtos: </p>
+        <ul>
+            <li v-for="produto in produtos">{{ produto.nome }}</li>
+        </ul>
+        <ul>
+            <li v-for="produto in produtos" :key="produto.id">{{ produto.nome }}</li>
+        </ul>
+        <button @click="produtos.reverse()">Inverter lista</button>
+        <button @click="addProduto">Add Produto</button>
+    </div>
+
+    <script type="text/javascript">
+
+        new Vue({
+            el: '#app',
+            data: {
+                produtos: [
+                    { id: 1, nome: 'Monitor' },
+                    { id: 2, nome: 'Teclado' },
+                    { id: 3, nome: 'Mouse' },
+                    { id: 4, nome: 'Processador' },
+                ]
+            },
+            methods: {
+                addProduto: function(){
+                    const id = this.produtos.length + 1;
+                    this.produtos.push({ id, nome: 'Produto ' + id });
+                }
+            }
+        });
+    
+    </script>
+
+</body>
+</html>
