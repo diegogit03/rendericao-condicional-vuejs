@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue js</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    
+    <div id="app">
+       <button @click="mostrar = !mostrar">Toggle</button>
+       <!--
+           v-show não remove o elemento, ela somente oculta por meio
+           de css
+
+           obs: ela não consegue trabalhar com template
+       -->
+       <p v-show="mostrar">Diretiva v-show "{{ mostrar }}"</p>
+    </div>
+
+    <script type="text/javascript">
+
+        new Vue({
+            el: '#app',
+            data: {
+                mostrar: true
+            }
+        });
+    
+    </script>
+
+</body>
+</html>
